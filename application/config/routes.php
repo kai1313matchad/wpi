@@ -52,3 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'C_dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['menu/career_list'] = 'C_dashboard/career_list';
+$route['career_details/(:any)'] = 'C_dashboard/career_details/$1';
+$route['career_apply/(:any)'] = 'C_dashboard/career_apply/$1';

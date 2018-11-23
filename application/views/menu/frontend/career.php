@@ -13,34 +13,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <h2 class="section-heading">We're Hiring!!!</h2>
+                    <h2 class="section-heading"><strong>We're Hiring!!!</strong></h2>
                     <hr class="light">
                     <?php
                     	for ($i = 0; $i < count($listdata); ++$i)
                     	{ ?>
                     		<div class="row-clearfix">
                     			<div class="row">
-                    				<div class="col-lg-2">
-                    					<p class="text-left">
-                    						Position
-                    					</p>
-                    				</div>
-                    				<div class="col-lg-10">
-                    					<p class="text-left">
-                    						<?php echo $listdata[$i]->judul_job ; ?>
-                    					</p>
-                    				</div>
-                    			</div>
-                    			<div class="row">
-                    				<div class="col-lg-12">
-                    					<hr class="blue">
-                    					<p class="text-right">
-                    						<?php
-                    							echo anchor('C_dashboard/career_details/'.$listdata[$i]->id_job,'See more Details>>>');
-                    						?>
-                    					</p>
-                    					<hr class="blue">
-                    				</div>
+                                    <div class="col-xs-2">
+                                        <label class="font-20">Position</label>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <span class="font-20"><?= $listdata[$i]->judul_job ; ?></span>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <span class="font-20"><?= anchor('career_details/'.$listdata[$i]->id_job,'See more Details>>>'); ?></span>
+                                    </div>
                     			</div>
                     		</div>
 					<?php

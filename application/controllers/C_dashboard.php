@@ -85,7 +85,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/career_list/');
 	    $config['total_rows'] = $this->db->count_all('jobs');
-	    $config['per_page'] = "5";
+	    $config['per_page'] = "10";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -121,18 +121,18 @@ class C_dashboard extends CI_Controller {
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
-	public function career_details()
+	public function career_details($id)
 	{
-		$id=$this->uri->segment(3);
+		// $id=$this->uri->segment(3);
 		$data['career']=$this->M_dash->select_career_details($id);
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/career_details';
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
-	public function career_apply()
+	public function career_apply($id)
 	{
-		$id=$this->uri->segment(3);
+		// $id=$this->uri->segment(3);
 		$data['error']=$this->upload->display_errors();
 		$data['data_career']=$this->M_dash->select_career_details($id);
 		$data['title']='WIPERINDONESIA';
