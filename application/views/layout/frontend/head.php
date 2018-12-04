@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya. Working on such services as steel construction, civil works, warehouse construction, home construction, home renovation, painting services, and all types of building construction.">
+    <meta name="description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya">
     <meta name="author" content="Kaisha">
     <link rel="icon" href="<?php echo base_url();?>assets/img/other/icon.ico"/>
     <!-- Twitter Card data -->
@@ -16,7 +16,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.wiperindonesia.com/" />
     <meta property="og:image" content="<?php echo base_url();?>assets/img/other/wiper.png" />
-    <meta property="og:description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya. Working on such services as steel construction, civil works, warehouse construction, home construction, home renovation, painting services, and all types of building construction." /> 
+    <meta property="og:description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya" /> 
 
     <title><?php echo $title ;?></title>
 
