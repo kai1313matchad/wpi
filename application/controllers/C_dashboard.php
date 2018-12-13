@@ -352,7 +352,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_jpo/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_jpo();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -384,7 +384,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		// $data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_pos()
@@ -393,7 +395,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_pos/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_pos();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -425,7 +427,10 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		// $data['products']=$this->M_dash->get_gallery_pos($config["per_page"], $data['page'], $srch);
+		// $data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_shelter()
@@ -434,7 +439,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_shelter/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_shelter();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -466,7 +471,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_sipil()
@@ -475,7 +482,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_sipil/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_sipil();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -507,7 +514,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_baja()
@@ -516,7 +525,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_baja/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_baja();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -548,7 +557,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_gudang()
@@ -557,7 +568,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_gudang/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_gudang();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -589,7 +600,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_k_rumah()
@@ -598,7 +611,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_k_rumah/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_k_rumah();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -630,7 +643,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_r_rumah()
@@ -639,7 +654,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_r_rumah/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_r_rumah();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -671,7 +686,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 
 	public function gallery_c_rumah()
@@ -680,7 +697,7 @@ class C_dashboard extends CI_Controller {
 		//pagination settings
 		$config['base_url'] = site_url('C_dashboard/gallery_c_rumah/');
 	    $config['total_rows'] = $this->M_dash->count_gallery_c_rumah();
-	    $config['per_page'] = "1";
+	    $config['per_page'] = "4";
 	    $config["uri_segment"] = 3;
 	    $choice = $config["total_rows"]/$config["per_page"];
 	    $config["num_links"] = floor($choice);
@@ -712,7 +729,9 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
+		$this->load->view('layout/frontend/modal1',$data);
 	}
 }
 ?>
