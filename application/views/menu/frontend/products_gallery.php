@@ -139,4 +139,10 @@
                 </a>
             </div>
         </div>
+        <div class="row"><br></div>
+        <div class="row text-center">
+            <a href="<?php echo base_url() ?>" type="button" class="btn btn-primary">
+                <<< Back To Home
+            </a>
+        </div>
     </section>

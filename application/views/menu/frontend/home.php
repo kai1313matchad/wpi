@@ -88,14 +88,33 @@
 	<section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <?php
+                $lnk = "";
                 for($i=0 ; $i<count($products) ; $i++)
                 {
                     $s = $i+1;
                     if($i == 0 or $i == 3)
-                    { ?>
+                    { if($products[$i]->kategori_product=="JPO (Jembatan Penyebrangan Orang)")
+                        {$lnk="gallery_jpo";}
+                      if($products[$i]->kategori_product=="Pos Security")
+                        {$lnk="gallery_pos";} 
+                      if($products[$i]->kategori_product=="Shelter Bus")
+                        {$lnk="gallery_selter";}
+                      if($products[$i]->kategori_product=="Pekerjaan Sipil")
+                        {$lnk="gallery_sipil";}
+                      if($products[$i]->kategori_product=="Konstruksi Baja")
+                        {$lnk="gallery_baja";}
+                      if($products[$i]->kategori_product=="Konstruksi Gudang")
+                        {$lnk="gallery_gudang";}
+                      if($products[$i]->kategori_product=="Konstruksi Rumah")
+                        {$lnk="gallery_k_rumah";}
+                      if($products[$i]->kategori_product=="Renovasi Rumah")
+                        {$lnk="gallery_r_rumah";}
+                      if($products[$i]->kategori_product=="Pengecatan Rumah")
+                        {$lnk="gallery_c_rumah";}?>
                         <div class="row no-gutter">
                             <div class="col-lg-4">
-                                <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal">
+                                <!-- <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal"> -->
+                                <a href="<?php echo base_url() ?>C_dashboard/<?php echo $lnk ?>" class="portfolio-link portfolio-box">
                                     <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $products[$i]->imgpath_product ?>" class="img-responsive img-product" alt="">
                                     <div class="portfolio-box-caption">
                                         <div class="portfolio-box-caption-content">
@@ -111,9 +130,27 @@
                 <?php
                     }
                     elseif ($i > 0 and $i < 2) 
-                    { ?>                
+                    { if($products[$i]->kategori_product=="JPO (Jembatan Penyebrangan Orang)")
+                        {$lnk="gallery_jpo";}
+                      if($products[$i]->kategori_product=="Pos Security")
+                        {$lnk="gallery_pos";} 
+                      if($products[$i]->kategori_product=="Shelter Bus")
+                        {$lnk="gallery_selter";}
+                      if($products[$i]->kategori_product=="Pekerjaan Sipil")
+                        {$lnk="gallery_sipil";}
+                      if($products[$i]->kategori_product=="Konstruksi Baja")
+                        {$lnk="gallery_baja";}
+                      if($products[$i]->kategori_product=="Konstruksi Gudang")
+                        {$lnk="gallery_gudang";}
+                      if($products[$i]->kategori_product=="Konstruksi Rumah")
+                        {$lnk="gallery_k_rumah";}
+                      if($products[$i]->kategori_product=="Renovasi Rumah")
+                        {$lnk="gallery_r_rumah";}
+                      if($products[$i]->kategori_product=="Pengecatan Rumah")
+                        {$lnk="gallery_c_rumah";}?>                
                             <div class="col-lg-4">
-                                <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal">
+                                <!-- <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal"> -->
+                                <a href="<?php echo base_url() ?>C_dashboard/<?php echo $lnk ?>" class="portfolio-link portfolio-box">
                                     <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $products[$i]->imgpath_product ?>" class="img-responsive img-product" alt="">
                                     <div class="portfolio-box-caption">
                                         <div class="portfolio-box-caption-content">
@@ -129,9 +166,27 @@
                 <?php
                     } 
                     elseif($i == 2 or $i == 5)
-                    { ?>
+                    { if($products[$i]->kategori_product=="JPO (Jembatan Penyebrangan Orang)")
+                        {$lnk="gallery_jpo";}
+                      if($products[$i]->kategori_product=="Pos Security")
+                        {$lnk="gallery_pos";} 
+                      if($products[$i]->kategori_product=="Shelter Bus")
+                        {$lnk="gallery_selter";}
+                      if($products[$i]->kategori_product=="Pekerjaan Sipil")
+                        {$lnk="gallery_sipil";}
+                      if($products[$i]->kategori_product=="Konstruksi Baja")
+                        {$lnk="gallery_baja";}
+                      if($products[$i]->kategori_product=="Konstruksi Gudang")
+                        {$lnk="gallery_gudang";}
+                      if($products[$i]->kategori_product=="Konstruksi Rumah")
+                        {$lnk="gallery_k_rumah";}
+                      if($products[$i]->kategori_product=="Renovasi Rumah")
+                        {$lnk="gallery_r_rumah";}
+                      if($products[$i]->kategori_product=="Pengecatan Rumah")
+                        {$lnk="gallery_c_rumah";}?>
                             <div class="col-lg-4">
-                                <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal">
+                                <!-- <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal"> -->
+                                <a href="<?php echo base_url() ?>C_dashboard/<?php echo $lnk ?>" class="portfolio-link portfolio-box">
                                     <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $products[$i]->imgpath_product ?>" class="img-responsive img-product"  alt="">
                                     <div class="portfolio-box-caption">
                                         <div class="portfolio-box-caption-content">
@@ -148,9 +203,27 @@
                 <?php
                     }
                     else
-                    { ?>
+                    { if($products[$i]->kategori_product=="JPO (Jembatan Penyebrangan Orang)")
+                        {$lnk="gallery_jpo";}
+                      if($products[$i]->kategori_product=="Pos Security")
+                        {$lnk="gallery_pos";} 
+                      if($products[$i]->kategori_product=="Shelter Bus")
+                        {$lnk="gallery_selter";}
+                      if($products[$i]->kategori_product=="Pekerjaan Sipil")
+                        {$lnk="gallery_sipil";}
+                      if($products[$i]->kategori_product=="Konstruksi Baja")
+                        {$lnk="gallery_baja";}
+                      if($products[$i]->kategori_product=="Konstruksi Gudang")
+                        {$lnk="gallery_gudang";}
+                      if($products[$i]->kategori_product=="Konstruksi Rumah")
+                        {$lnk="gallery_k_rumah";}
+                      if($products[$i]->kategori_product=="Renovasi Rumah")
+                        {$lnk="gallery_r_rumah";}
+                      if($products[$i]->kategori_product=="Pengecatan Rumah")
+                        {$lnk="gallery_c_rumah";}?>
                             <div class="col-lg-4">
-                                <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal">
+                                <!-- <a href="#portfolioModal<?php echo $s ?>" class="portfolio-link portfolio-box" data-toggle="modal"> -->
+                                <a href="<?php echo base_url() ?>C_dashboard/<?php echo $lnk ?>" class="portfolio-link portfolio-box">
                                     <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $products[$i]->imgpath_product ?>" class="img-responsive img-product" alt="">
                                     <div class="portfolio-box-caption">
                                         <div class="portfolio-box-caption-content">

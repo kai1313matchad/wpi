@@ -55,6 +55,9 @@
         	<a href="<?php echo base_url() ?>C_dashboard/products_gallery" type="button" class="btn btn-primary">
             	<<< Back To Gallery
             </a>
+            <a href="<?php echo base_url() ?>" type="button" class="btn btn-primary">
+                <<< Back To Home
+            </a>
         </div>
     </div>
 </section>
