@@ -10,14 +10,19 @@
     <meta name="author" content="Kaisha">
     <link rel="icon" href="<?php echo base_url();?>assets/img/other/icon.ico"/>
     <!-- Twitter Card data -->
-    <meta name="twitter:card" value="summary">
+    <!-- <meta name="twitter:card" value="summary"> -->
     <!-- Open Graph data -->
-    <meta property="og:title" content="PT Wijaya Persada Indonesia" />
+    <!-- <meta property="og:title" content="PT Wijaya Persada Indonesia" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.wiperindonesia.com/" />
     <meta property="og:image" content="<?php echo base_url();?>assets/img/other/wiper.png" />
-    <meta property="og:description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya" /> 
-
+    <meta property="og:description" content="PT. Wijaya Persada Indonesia is a contractor services company in Surabaya" />  -->
+    <?php 
+         foreach ($meta_add as $key)
+         {
+                 echo $key."\n";
+         }
+    ?>
     <title><?php echo $title ;?></title>
 
     <!-- Bootstrap Core CSS -->

@@ -14,6 +14,7 @@ class C_admin extends CI_Controller {
 		$this->load->model('backend/M_applicant','M_applicant');
 		$this->load->model('backend/M_account','M_account');
 		$this->load->model('backend/M_clients','M_client');
+		$this->load->model('backend/M_meta','M_meta');
 	}
 
 	//Menu List
@@ -311,6 +312,221 @@ class C_admin extends CI_Controller {
 		$data['error']=$this->upload->display_errors();
 		$this->load->view('layout/backend/wrapper',$data);	
 	}
+
+	public function menu_data_meta()
+	{
+		//pagination settings
+		$config['base_url'] = site_url('C_admin/menu_data_meta/');
+	    $config['total_rows'] = $this->db->count_all('meta_tag');
+	    $config['per_page'] = "5";
+	    $config["uri_segment"] = 3;
+	    $choice = $config["total_rows"]/$config["per_page"];
+	    $config["num_links"] = floor($choice);
+	    // integrate bootstrap pagination
+	    $config['full_tag_open'] = '<ul class="pagination">';
+	    $config['full_tag_close'] = '</ul>';
+	    $config['first_link'] = false;
+	    $config['last_link'] = false;
+	    $config['first_tag_open'] = '<li>';
+	    $config['first_tag_close'] = '</li>';
+	    $config['prev_link'] = '«';
+	    $config['prev_tag_open'] = '<li class="prev">';
+	    $config['prev_tag_close'] = '</li>';
+	    $config['next_link'] = '»';
+	    $config['next_tag_open'] = '<li>';
+	    $config['next_tag_close'] = '</li>';
+	    $config['last_tag_open'] = '<li>';
+	    $config['last_tag_close'] = '</li>';
+	    $config['cur_tag_open'] = '<li class="active"><a href="#">';
+	    $config['cur_tag_close'] = '</a></li>';
+	    $config['num_tag_open'] = '<li>';
+	    $config['num_tag_close'] = '</li>';
+	    $this->pagination->initialize($config);
+	    $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+	    $data['listdata'] = $this->M_meta->get_meta_data($config["per_page"], $data['page'], NULL);
+	    $data['pagination'] = $this->pagination->create_links();
+	    $data['error']=$this->upload->display_errors();
+		$data['total']=$this->M_meta->count_row_meta();
+		$data['title']='Halaman Dashboard Admin';
+		$data['isi']='menu/backend/adm_metadata';
+		$this->load->view('layout/backend/wrapper',$data);
+	}
+
+	public function menu_tambah_meta()
+	{
+		$data['error']=$this->upload->display_errors();
+		$data['title']='Halaman Dashboard Admin';
+		$data['isi']='menu/backend/adm_metaadd';
+		$this->load->view('layout/backend/wrapper',$data);
+	}
+
+	public function insert_meta()
+		{
+			$this->form_validation->set_rules('meta_title','Meta Title','required');			
+			$this->form_validation->set_rules('meta_keyword','Meta Keyword','required');			
+			$this->form_validation->set_message('required', '<div class="col-lg-12"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>%s Belum Diisi, Isi Terlebih Dahulu!!!</strong></div></div>');
+			$table='meta_tag';
+			// $minwidth='100';
+			// $minheight='100';
+			// $path='./assets/uploads/meta/';
+			// $this->configImg($path,$minwidth,$minheight);
+			if($this->form_validation->run() === FALSE)
+			{
+				$this->add_meta();
+			}
+			else
+			{
+				// if(!$this->upload->do_upload('img'))
+				// {
+				// 	$this->add_clients();
+				// }
+				// else
+				// {
+					// $fileinfo=$this->upload->data();
+					$data=array
+					(
+						'meta_title'=>$this->input->post('meta_title'),						
+						'meta_keyword'=>$this->input->post('meta_keyword'),
+						'meta_desc'=>$this->input->post('meta_desc')
+						// 'path'=>$fileinfo['file_name']
+					);					
+					$res = $this->M_meta->insert_meta($table,$data);
+					if($res == '0')
+					{
+						$data['msg']='<div class="col-lg-12"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>Data Gagal Disimpan!!!</strong></div></div>';
+					}
+					else
+					{
+						$data['msg']='<div class="col-lg-12"><div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>Data Berhasil Disimpan!!!</strong></div></div>';
+					}
+					$this->load->vars($data);
+					$this->add_meta();
+				// }
+			}
+		}
+
+	public function meta_search()
+		{
+			$srch = ($this->input->post("cari")) ? $this->input->post("cari") : "NULL";
+			$srch = ($this->uri->segment(3)) ? $this->uri->segment(3) : $srch;
+			$table='meta_tag';
+			$order='meta_id';
+			$spe='meta_title';
+			//pagination settings
+			$config['base_url'] = site_url("C_admin/meta_search/$srch");
+		    $config['total_rows'] = $this->M_meta->count_pagdata($table,$spe,$srch);
+		    $config['per_page'] = "5";
+		    $config["uri_segment"] = 4;
+		    $choice = $config["total_rows"]/$config["per_page"];
+		    $config["num_links"] = floor($choice);		    		    		  
+		    // integrate bootstrap pagination
+		    $config['full_tag_open'] = '<ul class="pagination">';
+		    $config['full_tag_close'] = '</ul>';
+		    $config['first_link'] = false;
+		    $config['last_link'] = false;
+		    $config['first_tag_open'] = '<li>';
+		    $config['first_tag_close'] = '</li>';
+		    $config['prev_link'] = '«';
+		    $config['prev_tag_open'] = '<li class="prev">';
+		    $config['prev_tag_close'] = '</li>';
+		    $config['next_link'] = '»';
+		    $config['next_tag_open'] = '<li>';
+		    $config['next_tag_close'] = '</li>';
+		    $config['last_tag_open'] = '<li>';
+		    $config['last_tag_close'] = '</li>';
+		    $config['cur_tag_open'] = '<li class="active"><a href="#">';
+		    $config['cur_tag_close'] = '</a></li>';
+		    $config['num_tag_open'] = '<li>';
+		    $config['num_tag_close'] = '</li>';
+		    $this->pagination->initialize($config);
+		    $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		    $data['listdata'] = $this->M_meta->get_srch_pag_data($table,$order,$spe,$config["per_page"], $data['page'], $srch);
+		    $data['pagination'] = $this->pagination->create_links();		    
+			$data['total']=$this->M_meta->count_pagdata($table,$spe,$srch);
+			$data['title']='Wiper Indonesia';
+			$data['isi']='menu/backend/adm_metadata';			
+			$this->load->view('layout/backend/wrapper',$data);
+		}
+
+	public function add_meta()
+		{
+			$data['title']='Wiper Indonesia';
+			$data['isi']='menu/backend/adm_metaadd';
+			$data['error']=$this->upload->display_errors();
+			$this->load->view('layout/backend/wrapper',$data);
+		}
+
+	public function edit_meta()
+		{
+			$id=$this->uri->segment(3);
+			$id_table='meta_id';
+			$table='meta_tag';
+			$data['title']='Tritunggal Metalworks';
+			$data['isi']='menu/backend/adm_metaedit';
+			$data['data']=$this->M_meta->get_edit_data($table,$id_table,$id);
+			$data['error']=$this->upload->display_errors();			
+			$this->load->view('layout/backend/wrapper',$data);
+		}
+
+	public function update_meta()
+		{
+			$this->form_validation->set_rules('meta_title','Meta Title','required');			
+			$this->form_validation->set_rules('meta_keyword','Meta Keyword','required');			
+			$this->form_validation->set_message('required', '<div class="col-lg-12"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>%s Belum Diisi, Isi Terlebih Dahulu!!!</strong></div></div>');
+			$id_table='meta_id';
+			$table='meta_tag';
+			$id=$this->input->post('meta_id');
+			if($this->form_validation->run() === FALSE)
+			{
+				$data['title']='Wiper Indonesia';
+				$data['isi']='menu/backend/adm_metaedit';
+				$data['data']=$this->M_meta->get_edit_data($table,$id_table,$id);
+				$data['error']=$this->upload->display_errors();
+				$this->load->view('layout/backend/wrapper',$data);	
+			}
+			else
+			{
+				$data=array
+				(
+					'meta_title'=>$this->input->post('meta_title'),						
+					'meta_keyword'=>$this->input->post('meta_keyword'),
+					'meta_desc'=>$this->input->post('meta_desc')					
+				);
+				$res = $this->M_meta->update_data($table,$id,$id_table,$data);
+				if($res == '0')
+				{
+					$data['msg']='<div class="col-lg-12"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>Data Gagal Disimpan!!!</strong></div></div>';
+				}
+				else
+				{
+					$data['msg']='<div class="col-lg-12"><div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button><strong>Data Berhasil Disimpan!!!</strong></div></div>';	
+				}					
+				$data['title']='Wiper Indonesia';
+				$data['isi']='menu/backend/adm_metaedit';
+				$data['data']=$this->M_meta->get_edit_data($table,$id_table,$id);
+				$data['error']=$this->upload->display_errors();
+				$this->load->view('layout/backend/wrapper',$data);
+			}
+		}
+
+	public function delete_meta()
+		{
+			$id=$this->uri->segment(3);
+			$img_path=$this->uri->segment(4);	
+			$id_table='meta_id';
+			$table='meta_tag';	
+			// unlink('./assets/uploads/clients/'.$img_path);
+			$this->M_meta->delete_data($table,$id,$id_table);
+			redirect('C_admin/menu_data_meta?sts=del_sukses');
+		}
+
+	public function account_data()
+		{
+			$data['account']=$this->M_adm->select_data();
+			$data['title']='Tritunggal Metalworks';
+			$data['isi']='menu/backend/account_data';			
+			$this->load->view('layout/backend/wrapper',$data);
+		}
 
 	public function menu_data_pelamar()
 	{

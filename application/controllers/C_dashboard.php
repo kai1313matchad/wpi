@@ -19,6 +19,7 @@ class C_dashboard extends CI_Controller {
 
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/home';	
+		$data['meta_add'] = $this->meta_social(5);
 		$this->load->view('layout/frontend/wrapper_index',$data);
 		$this->load->view('layout/frontend/modal',$data);
 	}
@@ -27,6 +28,7 @@ class C_dashboard extends CI_Controller {
 	{
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/about';
+		$data['meta_add'] = $this->meta_social(5);
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
@@ -67,15 +69,19 @@ class C_dashboard extends CI_Controller {
 	    $data['pagination'] = $this->pagination->create_links();		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/news_list';
+		$data['meta_add'] = $this->meta_artikel(3);
 		$this->load->view('layout/frontend/wrapper',$data);	
 	}
 
 	public function news_read()
 	{
 		$id=$this->uri->segment(3);
-		$data['news']=$this->M_dash->select_news_read($id);
+		$d=$this->M_dash->select_news_read($id);
+		//$data['news']=$this->M_dash->select_news_read($id);
+		$data['news']=$d;
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/news_read';
+		$data['meta_add'] = $this->meta_artikel($d['img_news']);
 		$this->load->view('layout/frontend/wrapper',$data);	
 	}
 
@@ -343,6 +349,7 @@ class C_dashboard extends CI_Controller {
 
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/products_gallery';
+		$data['meta_add'] = $this->meta_social(5);
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
@@ -384,6 +391,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(3);
 		// $data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -427,6 +435,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(4);
 		// $data['products']=$this->M_dash->get_gallery_pos($config["per_page"], $data['page'], $srch);
 		// $data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
@@ -471,6 +480,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(6);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -514,6 +524,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(7);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -557,6 +568,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(5);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -600,6 +612,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(2);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -643,6 +656,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(8);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -686,6 +700,7 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(9);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
@@ -729,9 +744,52 @@ class C_dashboard extends CI_Controller {
 		
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/detail_gallery';
+		$data['meta_add'] = $this->meta_prod(10);
 		//$data['products']=$this->M_dash->select_last_products();
 		$this->load->view('layout/frontend/wrapper',$data);	
 		$this->load->view('layout/frontend/modal1',$data);
 	}
+
+	public function meta_social($id)
+		{
+			$table='meta_tag';
+			$idtable='meta_id';
+			$getmeta = $this->db->get_where($table,array($idtable=>$id));
+			$res = array();
+			$res[] = '<meta name="twitter:title" content="'.$getmeta->row()->meta_title.'">';
+            $res[] = '<meta name="twitter:description" content="'.$getmeta->row()->meta_desc.'">';
+            $res[] = '<meta name="og:title" content="'.$getmeta->row()->meta_title.'">';
+            $res[] = '<meta name="og:description" content="'.$getmeta->row()->meta_desc.'">';
+			return $res;
+		}	
+
+	public function meta_prod($id)
+		{
+			$table='products';
+			$idtable='id_product';
+			$table2='meta_tag';
+			$idtable2='meta_id';
+			$get_prod = $this->db->get_where($table,array($idtable=>$id))->row();
+			$get_meta = $this->db->get_where($table2,array($idtable2=>6));
+			$res = array();
+			$res[] = '<meta name="og:title" content="'.$get_meta->row()->meta_title.'">';
+            $res[] = '<meta name="og:description" content="'.$get_meta->row()->meta_desc.'">';
+            $res[] = '<meta name="og:image" content="'.$get_prod->imgpath_product.'">';
+			$data['meta_addon'] = $res;
+			return $res;
+		}
+
+	public function meta_artikel($path)
+		{
+			$table='meta_tag';
+			$idtable='meta_id';			
+			$get_meta = $this->db->get_where($table,array($idtable=>7));
+			$res = array();
+			$res[] = '<meta name="og:title" content="'.$get_meta->row()->meta_title.'">';
+            $res[] = '<meta name="og:description" content="'.$get_meta->row()->meta_desc.'">';
+            $res[] = '<meta name="og:image" content="'.$path.'">';
+			$data['meta_addon'] = $res;
+			return $res;
+		}
 }
 ?>

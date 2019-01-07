@@ -81,6 +81,18 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#meta"><i class="far fa-clipboard fa-fw"></i> Meta <i class="fa fa-fw fa-caret-down"></i></a>
+                        <!--<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>-->
+                        <ul id="meta" class="collapse">
+                            <li>
+                                <a href="<?php echo base_url()?>C_admin/menu_data_meta">Data Meta</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url()?>C_admin/menu_tambah_meta">Tambah Meta</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url()?>C_admin/menu_data_pelamar"><i class="fa fa-fw fa-vcard-o"></i> Data Pelamar</a>
                     </li>
                     <li>
