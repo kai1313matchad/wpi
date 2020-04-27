@@ -151,6 +151,22 @@
 			return $que->num_rows();
 		}
 
+		public function get_prodlist_data($limit,$start,$srch = NULL)
+		{
+			if($srch == "NULL") $srch = "";
+			$sql = "SELECT * FROM products ORDER BY id_product DESC LIMIT " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		public function count_prodlist($srch = NULL)
+		{
+			if ($srch == 'NULL') $srch = '';
+			$this->db->like('nama_product',$srch);
+			$que = $this->db->get('products');
+			return $que->num_rows();
+		}
+
 		public function select_career_details($id)
 		{
 			$que=$this->db->get_where('jobs', array('id_job'=>$id));

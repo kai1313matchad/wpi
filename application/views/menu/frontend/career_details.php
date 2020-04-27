@@ -1,139 +1,122 @@
-<section class="bg2" id="career">
+ <!--====================  breadcrumb area ====================-->
+    <div class="page-breadcrumb bg-img space__bottom--r120" data-bg="assets/img/backgrounds/photo-of-people-near-wooden-table.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1 class="section-heading">CAREER</h1>
-                    <hr class="light">
+                <div class="col">
+                    <div class="page-breadcrumb-content text-center">
+                        <h1>Berita</h1>
+                        <ul class="page-breadcrumb-links">
+                            <li><a href="<?=base_url()?>">Home</a></li>
+                            <li>Blog Post</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white">
-    <?php extract($career) ?>
+    </div>
+    <!--====================  End of breadcrumb area  ====================-->
+    <!--====================  blog details ====================-->
+    <div class="blog-section space__bottom--r120">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
-                    <h2 class="section-heading">Position : <?= $judul_job; ?></h2>
-                    <hr class="light">                    
-					<div class="row-clearfix">
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									Title
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<p class="text-left">
-									<?= $judul_job; ?>
-								</p>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									Start Date
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<p class="text-left">
-									<?= $tglstart_job; ?>
-								</p>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									End Date
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<p class="text-left">
-									<?= $tglend_job; ?>
-								</p>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									Location
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<p class="text-left">
-									<?= $lokasi_job; ?>
-								</p>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									Job Description
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<?= $desc_job; ?>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2">
-								<p class="text-left">
-									Information
-								</p>
-							</div>
-							<div class="col-lg-10">
-								<?= $info_job; ?>
-								<hr class="black">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-4 col-lg-offset-2">
-								<p class="text-left">
-									<a href="<?= base_url() ?>menu/career_list"> 
-										<<< Back To Career
-									</a>
-								</p>								
-							</div>
-							<div class="col-lg-4 col-lg-offset-2">
-								<p class="text-right">
-                    				<?= anchor('career_apply/'.$id_job,'Career Apply >>>'); ?>
-                    			</p>
-							</div>						
-						</div>
-						<div class="row">
-							<div class="col-lg-4 col-lg-offset-2">
-								<strong>Share : </strong>
-								<ul class="list-inline">
-									<li>
-										<a href="https://www.facebook.com/sharer.php?s=100&amp;p[url]=<?= current_url() ?>" target="_blank" class="btn-social2 btn-outline2">
-											<i class="fa fa-facebook-square" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://twitter.com/share?source=sharethiscom&text=<?= current_url() ?>" target="_blank" class="btn-social2 btn-outline2">
-											<i class="fa fa-twitter-square" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+                <div class="col-lg-8 col-12">
+                    <div class="row">
+                        <div class="blog-details col-12">
+                            <div class="blog-inner">
+                                <div class="media">
+                                    <div class="image"><img src="assets/img/blog/blog-details-1.jpg" alt=""></div>
+                                </div>
+                                <div class="content">
+                                <?php extract($career) ?>    
+                                    <h4 class="title"><?= $judul_job; ?></h4>
+                                    <div class="job-detail">
+                                    	<p class="text-muted mb-0"><span class="glyphicon glyphicon-map-marker"></span>Start: <?= $tglstart_job; ?> End: <?= $tglend_job; ?></p>
+                                    	<p class="text-muted mb-0"><i class="mdi mdi-map-marker mr-2"></i><?= $lokasi_job; ?></p>
+                                    </div>
+                                    <div class="desc space__bottom--30">
+                                        <?= $desc_job; ?>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
-				<div class="col-lg-3">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="section-heading">About Us</h2>
-							<p>
-								Berawal dari pengalaman menangani project – project bidang konstruksi yang sudah kami kerjakan sejak tahun 2004 maka ditahun 2015 ini kami meresmikan PT. Wijaya Persada Indonesia pada tanggal 20 Februari 2015 sebagai perusahaan yang menangani bidang general contractor, trading, dan supplier. Didasari dengan keinginan dan tekad yang kuat untuk membuka usaha kontraktor dimana saat ini dengan melihat perkembangan project-project property yang semakin bertumbuh di Indonesia maka dalam hal ini kami dari jajaran manajemen yakin dan mampu mengambil peluang – peluang tersebut. 
-							</p>
-						</div>
-					</div>
-				</div>
-            </div>            		
+                <div class="col-lg-4 col-12 space__top__md--50 space__top__lm--50">
+                    
+                    <div class="sidebar">
+                    	<h5 class="text-muted text-center pb-2"><i class="mdi mdi-map-marker mr-2"></i>Our Spirit</h5>
+                       <div class="job-detail-location pt-4 border-top">
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-bank text-muted"></i>
+                                </div>
+                                <p>At Wiperindonesia, we believe that developing into a better human being is a never-ending journey that can only be achieved with the sincerity to share like a manager, and the desire to always learn like an apprentice employee.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- <div class="sidebar">
+                    	<h5 class="text-muted text-center pb-2"><i class="mdi mdi-clock-outline mr-2"></i>Opening Hours</h5>
+                        <div class="job-detail-time border-top pt-4">
+                            <ul class="list-inline mb-0">
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Monday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">9AM - 7PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Tuesday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">9AM - 7PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Wednesday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">9AM - 7PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Thursday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">9AM - 7PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Friday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">9AM - 7PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted border-bottom pb-3">
+                                    <div class="float-left">Saturday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">6:30AM - 1PM</h5>
+                                    </div>
+                                </li>
+
+                                <li class="clearfix text-muted pb-0">
+                                    <div class="float-left">Sunday</div>
+                                    <div class="float-right">
+                                        <h5 class="f-13 mb-0">Closed</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                	<div class="job-detail border rounded mt-4">
+                        <a href="<?=base_url()?>career_apply/<?=$id_job?>" class="btn btn-primary btn-block">Apply For Job</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    <!--====================  End of blog details  ====================-->

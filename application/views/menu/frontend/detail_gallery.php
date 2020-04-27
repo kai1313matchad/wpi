@@ -1,44 +1,69 @@
-<section class="bg2">
+ <!--====================  breadcrumb area ====================-->
+    <div class="page-breadcrumb bg-img space__bottom--r120" data-bg="assets/img/backgrounds/architecture-building-city.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1 class="section-heading">Gallery Product</h1>                    
-                    <hr class="light">
+                <div class="col">
+                    <div class="page-breadcrumb-content text-center">
+                        <h1>Project Details</h1>
+                        <ul class="page-breadcrumb-links">
+                            <li><a href="<?=base_url()?>">Home</a></li>
+                            <li>Project Details</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white" id="news">
-        <div class="container">       
+    </div>
+    <!--====================  End of breadcrumb area  ====================-->
+    <!--====================  project details area ====================-->
+    <div class="project-section space__bottom--r120">
+        <div class="container">
             <div class="row">
-            	<?php
-					for($i=0 ; $i<count($listdata) ; $i++)
-					{ 
-				?>
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2 class="section-heading text-center"><?php echo $listdata[$i]->nama_product ; ?></h2>
-                    <hr class="light">                    
-					<div class="row-clearfix">
-						<div class="row">							
-							<img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $listdata[$i]->imgpath_product; ?>" class="img-responsive" width="100%" height="100%">
-						</div>
-						<div class="row">							
-							<?php echo $listdata[$i]->ket_product ; ?>
-						</div>						
-					</div>
+                <div class="col-12 space__bottom--40">
+                    <div class="project-image"><img src="assets/img/projects/project-details.jpg" class="img-fluid" alt=""></div>
                 </div>
-                <?php
-					}
-				?>
-            </div>
-            <div class="row text-center">
-            	<?php echo $pagination; ?>
-            </div>
-            <div class="row text-center">
-            	<a href="<?php echo base_url() ?>C_dashboard/products_gallery" type="button" class="btn btn-primary">
-                	<<< Back To Gallery
-                </a>
+                <div class="col-lg-4 col-12 space__bottom--30">
+                    <div>
+                        <img src="<?php echo base_url() ?>assets/uploads/product/<?=$imgpath_product?>" class="img-fluid" alt="">
+                    </div>
+                    <div class="project-information">
+                        <h4 class="space__bottom--15">Project Information</h4>
+                        <ul>
+                            <li><strong>Nama:</strong> <a href="#"><?=$nama_product?></a></li>
+                            <li><strong>Category:</strong><?=$kategori_product?></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-12 space__bottom--30">
+                    <div class="project-details">
+                        <h3 class="space__bottom--15"><?=$nama_product?></h3>
+                        <?=$ket_product?>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row row-5 image-popup">
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project1-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project1-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project2-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project2-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project3-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project3-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project4-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project4-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project5-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project5-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 space__top--10">
+                            <a href="assets/img/projects/project6-m.jpg" class="gallery-item single-gallery-thumb"><img src="assets/img/projects/project6-m.jpg" class="img-fluid" alt=""><span class="plus"></span></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!--====================  End of project details area  ====================-->

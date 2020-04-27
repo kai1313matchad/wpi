@@ -1,106 +1,194 @@
-<section class="bg2">
+ <!--====================  breadcrumb area ====================-->
+    <div class="page-breadcrumb bg-img space__bottom--r120" data-bg="<?php echo base_url() ?>assets/img/backgrounds/person-holding-grinder.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1 class="section-heading">About Us</h1>
-					<h3>All we want is Your Smile for our work</h3>
-                    <hr class="light">
+                <div class="col">
+                    <div class="page-breadcrumb-content text-center">
+                        <h1>Tentang Perusahaan Kami</h1>
+                        <ul class="page-breadcrumb-links">
+                            <li><a href="<?=base_url()?>">Home</a></li>
+                            <li>Tentang Perusahaan Kami</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="bg3">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4"><br><br><br>
-                <img src="<?php echo base_url() ?>assets/img/other/wiper.png" class="img-responsive sr-icons" alt="">
-            </div>
-			<div class="col-lg-8 text-justify">
-			<h2>HISTORY COMPANY</h2>
-			<p>
-                PT. Wijaya Persada Indonesia adalah perusahaan jasa kontraktor yang ada di surabaya diantaranya jasa kontruksi baja, pekerjaan sipil, kontruksi gudang, kontruksi rumah, renovasi rumah, jasa pengecetan dan semua kontruksi bangunan. Perusahaan mempunyai pengalaman menangani project – project bidang konstruksi yang sudah kami kerjakan sejak tahun 2004 maka ditahun 2015 ini kami meresmikan PT. Wijaya Persada Indonesia pada tanggal 20 Februari 2015 sebagai perusahaan yang menangani bidang general contractor, trading, dan supplier. Misi dan visi kami adalah perusahaan dengan memberikan jasa yang berkualitas baik, terpercaya, dapat dihandalkan dan memberikan kepuasan ke customer kami.
-            </p>
-			</div>
-		</div>
-        <div class="row">
-    		<div class="col-lg-6 text-justify">
-                <h2>VISION</h2>    			
-                <p>
-                    Menjadi perusahaan swasta nasional terdepan di berbagai bidang industri  yang berfokus pada bidang general kontraktor, supplier dan trading yang terus bertumbuh dan berkembang secara berkesinambungan, memberikan kesejahteraan dan menjadi saluran berkat bagi semua yang berhubungan dengan kami.
-                </p>
-                <div class="img-map">
-                    <img src="<?php echo base_url() ?>assets/img/other/peta.png" class="img-responsive sr-icons" alt="">  
-                </div>                
-    		</div>
-    		<div class="col-lg-6 text-justify">
-                <h2>MISION</h2>
-                <p>
-                    1. Perusahaan general contractor, supplier, trading yang berkomitmen kuat untuk selalu bertumbuh dan bekerja secara tim sehingga mampu memberikan pelayanan terbaik kepada semua klien
-    				<br>2. Perusahaan Kontraktor yang berfokus pada semua pekerjaan yang berhubungan dengan general kontraktor, supplier maupun trading mulai perencanaan sampai pelaksanaan, diantaranya : pembangunan pergudangan, ruko, perumahan, jembatan, exterior/fascia, pondasi perumahan maupun tiang BTS dll.
-    				<br>3. Jasa kami selalu mengedepankan kekuatan, keamanan, keselamatan, dan kerapian hasil kerja sehingga memberikan nilai kepuasan bagi semua segmen yang berhubungan dengan kami
-    				<br>4. Pelanggan kami adalah perusahaan terpilih baik kecil, sedang maupun besar yang mempercayakan projectnya kepada kami dengan waktu dan hasil yang memuaskan
-    				<br>5. Kami mempunyai hubungan yang baik sehingga  perusahaan dapat dipercaya oleh pelanggan, supplier, pemegang saham, pemerintahan, asosiasi perusahaan kontraktor, rekan sesama perusahaan kontraktor dan masyarakat yang saling bertumbuh dan berkembang kearah yang lebih baik.
-                </p>
-    		</div>
-        </div>
-		<div class="row">
-			<div class="col-lg-12 text-center" >
-				<h2>GLENIKAN</h2>
-			</div>	
-			<div class="col-lg-12 text-justify">
-				<p>
-                    Untuk sebuah senyuman . . .<br>
-					Berkembangnya kebutuhan akan promosi dewasa ini ditambah dengan banyaknya jenis media yang ada telah membuat sebuah perubahan yang besar dalam cara-cara berpromosi dan meningkatnya persaingan suatu merek membuat konsumen sangat selektif dalam memilih produk, hal ini kami sikapi dengan mengedepankan pelayanan promosi yang tepat guna. Dengan beriklan melalui media kami, maka integritas merek produk anda dipastikan akan tetap terjaga, bahkan mampu menambah kepercayaan konsumen kepada produk anda.
-				</p>
-			</div>
-		</div>
-	</section>
-	
-	<section class="sect-partner">
-		<div class="row text-center">
-			<h2>PARTNERSHIP</h2><br>
-			<div class="row">				
-				<div class="col-lg-3 col-lg-offset-3 text-center">
-                    <img src="<?php echo base_url() ?>assets/img/other/match.png" class="img-responsive sr-icons" alt="">
+    </div>
+    <!--====================  End of breadcrumb area  ====================-->
+    <!--====================  about area ====================-->
+    <div class="about-area space__bottom--r120 ">
+        <div class="container">
+            <div class="row align-items-center row-25">
+                <div class="col-md-6 order-2 order-md-1">
+                    <div class="about-content">
+                        <!-- section title -->
+                        <div class="section-title space__bottom--25">
+                            <h3 class="section-title__sub">Sejak 2004</h3>
+                            <h2 class="section-title__title">Memberikan servis serta kualitas bangunan yang terbaik</h2>
+                        </div>
+                        <p class="about-content__text space__bottom--40">PT. Wijaya Persada Indonesia adalah perusahaan jasa kontraktor di Surabaya. Bekerja pada layanan seperti konstruksi baja, pekerjaan sipil, konstruksi gudang, konstruksi rumah, renovasi rumah, layanan pengecatan, dan semua jenis konstruksi bangunan. Perusahaan ini memiliki pengalaman menangani banyak proyek di bidang konstruksi yang telah kami lakukan sejak tahun 2004, kemudian pada tahun 2015 kami meresmikan PT. Wijaya Persada Indonesia tepatnya pada 20 Februari 2015 sebagai perusahaan yang menangani bidang kontraktor umum, perdagangan, dan pemasok. Misi dan visi kami adalah menjadi perusahaan yang menyediakan layanan berkualitas baik, andal, dan memberikan kepuasan kepada pelanggan kami</p>
+                        <a href="<?=base_url()?>contact" class="default-btn">Mulai sekarang</a>
+                    </div>
                 </div>
-				<div class="col-lg-3 text-center">
-                    <img src="<?php echo base_url() ?>assets/img/other/tri.png" class="img-responsive text-center sr-icons " alt="">
-                </div>				
-			</div>
-		</div>
-	</section>
-	
-	<section class="bgabout">
-		<div class="row">
-			<h2>MANAGEMENT TEAM</h2>
-			<div class="col-lg-3">
-                <img src="<?php echo base_url() ?>assets/img/other/komisaris.png" class="img-responsive sr-icons" alt="">
-    			<strong>
-                    Komisaris<br>
-                    Dewi Puspo
-                </strong>
+                <div class="col-md-6 order-1 order-md-2">
+                    <div class="about-image space__bottom__lm--30">
+                        <img src="<?php echo base_url() ?>assets/img/about/about-section-2.png" class="img-fluid" alt="">
+                    </div>
+                </div>
             </div>
-			<div class="col-lg-3">
-                <img src="<?php echo base_url() ?>assets/img/other/direktur.png" class="img-responsive text-center sr-icons" alt="">
-                <strong>
-                    Direktur<br>
-                    Rudi Wijaya
-                </strong>
+        </div>
+    </div>
+    <!--====================  End of about area  ====================-->
+    <!--====================  cta area ====================-->
+   <!--  <div class="cta-area cta-area-bg bg-img" data-bg="<?php echo base_url() ?>assets/img/backgrounds/cta-bg2.jpg">
+        <div class="cta-wrapper background-color--dark-overlay space__inner__top--50 space__inner__bottom--150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto">
+                        <div class="cta-block cta-block--default-color">
+                            <p class="cta-block__light-text text-center">More than <span>25</span> years</p>
+                            <p class="cta-block__semi-bold-text cta-block__semi-bold-text--medium text-center">Do you have project Just dial (toll free)</p>
+                            <p class="cta-block__bold-text text-center">+98565 569 874</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-			<div class="col-lg-3">
-                <img src="<?php echo base_url() ?>assets/img/other/gm.png" class="img-responsive sr-icons" alt="">
-                <strong>
-                    General Manager<br>
-                    Diana Puji Lestari
-                </strong>
+        </div>
+    </div> -->
+    <!--====================  End of cta area  ====================-->
+    <!-- funfact include -->
+   
+    <!--====================  feature area ====================-->
+    <div class="feature-area space__bottom--r120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <!-- feature content wrapper -->
+                    <div class="feature-content-wrapper space__bottom--m35">
+                        <div class="single-feature space__bottom--35">
+                            <div class="single-feature__icon">
+                                <img src="<?php echo base_url() ?>assets/img/icons/feature-1.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-feature__content">
+                                <h4 class="single-feature__title">Great Services</h4>
+                                <p class="single-feature__text">Kami memiliki produk unggulan dan beberapa kerjasama dengan berbagai pihak dalam membantu proyek anda</p>
+                            </div>
+                        </div>
+                        <div class="single-feature space__bottom--35">
+                            <div class="single-feature__icon">
+                                <img src="<?php echo base_url() ?>assets/img/icons/feature-2.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-feature__content">
+                                <h4 class="single-feature__title">Highest Standards</h4>
+                                <p class="single-feature__text">Kami juga memiliki standar tersendiri dalam menangani proyek sehingga dapat menentukan kualitas dari proyek yang kami kerjakan</p>
+                            </div>
+                        </div>
+                        <div class="single-feature space__bottom--35">
+                            <div class="single-feature__icon">
+                                <img src="<?php echo base_url() ?>assets/img/icons/feature-3.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-feature__content">
+                                <h4 class="single-feature__title">Low Price</h4>
+                                <p class="single-feature__text">Kami memberikan produk yang terbaik dan harga yang bersaing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 space__bottom__md--40 space__bottom__lm--40 order-1 order-lg-2">
+                    <!-- feature content image -->
+                    <div class="feature-content-image">
+                        <img src="<?php echo base_url() ?>assets/img/feature/feature-banner-1.jpg" class="img-fluid" alt="">
+                        <img src="<?php echo base_url() ?>assets/img/feature/feature-banner-2.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
             </div>
-			<div class="col-lg-3">
-                <img src="<?php echo base_url() ?>assets/img/other/manager.png" class="img-responsive text-center sr-icons" alt="">
-                <strong>
-                    Manager<br>
-                    Dhani Bahtiar R
-                </strong>
+        </div>
+    </div>
+    <!--====================  End of feature area  ====================-->
+    <!--====================  team area ====================-->
+    <div class="team-area space__bottom--r120 position-relative">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 space__bottom__md--40 space__bottom__lm--40">
+                    <div class="team-member-title-wrapper">
+                        <!-- section title -->
+                        <div class="section-title space__bottom--30 space__bottom__md--30  space__bottom__lm--20">
+                            <h3 class="section-title__sub">Professional Team</h3>
+                            <!-- <h2 class="section-title__title">Best & quality team member</h2> -->
+                        </div>
+                        <p class="team-text">kami juga memiliki para pekerja tim yang profesional dengan mengedepankan pelayanan pada setiap klien klien kami agar mereka puas dengan layanan kami</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 col-md-6">
+                            <div class="nav nav-tabs team-member-link-wrapper" id="nav-tab2" role="tablist">
+                                <a class="nav-item nav-link" id="team-member1-tab" data-toggle="tab" href="#team-member1" role="tab" aria-selected="false">
+                                    <img src="<?php echo base_url() ?>assets/img/team/003-man.png" class="img-fluid" alt="">
+                                </a>
+                                <a class="nav-item nav-link" id="team-member2-tab" data-toggle="tab" href="#team-member2" role="tab" aria-selected="false">
+                                    <img src="<?php echo base_url() ?>assets/img/team/003-woman-1.png" class="img-fluid" alt="">
+                                </a>
+                                <a class="nav-item nav-link" id="team-member3-tab" data-toggle="tab" href="#team-member3" role="tab" aria-selected="false">
+                                    <img src="<?php echo base_url() ?>assets/img/team/005-businessman.png" class="img-fluid" alt="">
+                                </a>
+                                <a class="nav-item nav-link" id="team-member4-tab" data-toggle="tab" href="#team-member4" role="tab" aria-selected="false">
+                                    <img src="<?php echo base_url() ?>assets/img/team/004-woman-2.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6">
+                            <div class="tab-content team-member__content-wrapper">
+                                <div class="tab-pane fade show active" id="team-member1" role="tabpanel" aria-labelledby="team-member1-tab">
+                                    <div class="single-team-member--shadow2 text-center">
+                                        <div class="single-team-member__image">
+                                            <img src="<?php echo base_url() ?>assets/img/team/007-worker.png" alt="">
+                                        </div>
+                                        <!-- <div class="single-team-member__content">
+                                            <h5 class="single-team-member__name">Smarto Jowly</h5>
+                                            <p class="single-team-member__des">Chief Plamber</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="team-member2" role="tabpanel" aria-labelledby="team-member2-tab">
+                                    <div class="single-team-member--shadow text-center">
+                                        <div class="single-team-member__image">
+                                            <img src="<?php echo base_url() ?>assets/img/team/team-member2.jpg" alt="">
+                                        </div>
+                                        <div class="single-team-member__content">
+                                            <h5 class="single-team-member__name">Franky Moina</h5>
+                                            <p class="single-team-member__des">Chief Electrician</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="team-member3" role="tabpanel" aria-labelledby="team-member3-tab">
+                                    <div class="single-team-member--shadow text-center">
+                                        <div class="single-team-member__image">
+                                            <img src="<?php echo base_url() ?>assets/img/team/team-member3.jpg" alt="">
+                                        </div>
+                                        <div class="single-team-member__content">
+                                            <h5 class="single-team-member__name">Navira Parey</h5>
+                                            <p class="single-team-member__des">Chief Architect</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="team-member4" role="tabpanel" aria-labelledby="team-member4-tab">
+                                    <div class="single-team-member--shadow text-center">
+                                        <div class="single-team-member__image">
+                                            <img src="<?php echo base_url() ?>assets/img/team/team-member4.jpg" alt="">
+                                        </div>
+                                        <div class="single-team-member__content">
+                                            <h5 class="single-team-member__name">Tandur Belali</h5>
+                                            <p class="single-team-member__des">Engineer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-		</div>		
-    </section>
+        </div>
+    </div>
+    <!--====================  End of team area  ====================-->
+   

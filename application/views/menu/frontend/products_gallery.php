@@ -1,142 +1,55 @@
-<section class="bg2">
+<!--====================  breadcrumb area ====================-->
+    <div class="page-breadcrumb bg-img space__bottom--r120" data-bg="<?php echo base_url() ?>assets/img/backgrounds/architecture-building-city.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1 class="section-heading">Gallery Product</h1>
-                    <hr class="light">
+                <div class="col">
+                    <div class="page-breadcrumb-content text-center">
+                        <h1>Galeri Produk</h1>
+                        <!-- <ul class="page-breadcrumb-links">
+                            <li><a href="<?=base_url()?>">Home</a></li>
+                            <li>Gallery Product</li>
+                        </ul> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white">        
-        <div class="row no-gutter">
-            <div class="col-lg-4">
-                <!--a href="<?php echo base_url() ?>C_dashboard/detail_gallery/<?php echo $jpo['id_product']?>" class="portfolio-link portfolio-box" -->
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_jpo" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $jpo['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $jpo['kategori_product'] ?>
-                                <br>
-                                <?php echo $jpo['nama_product'] ?>
+    </div>
+    <!--====================  End of breadcrumb area  ====================-->
+    <div class="project-section space__bottom--r120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project-item-wrapper space__bottom--m40">
+                        <div class="row">
+                            <?php
+                            foreach ($projects as $proj) {
+                            ?>
+                            <div class="col-lg-4 col-md-6 col-12 space__bottom--40">
+                                <div class="single-project-wrapper single-project-wrapper--reduced-abs" id="<?=$proj->kategori_product?>">
+                                    <a class="single-project-item p-0" href="<?=base_url()?>C_dashboard/detail_product/<?=$proj->id_product?>">
+                                        <img src="<?php echo base_url() ?>assets/uploads/product/<?=$proj->imgpath_product?>" class="img-fluid" alt="">
+                                        <span class="single-project-title"><?=$proj->nama_product?></span>
+                                    </a>
+                                </div>
                             </div>
-                        </div>                                
+                            <?php } ?>
+                            
+                            
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_pos" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $pos['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $pos['kategori_product'] ?>
-                                <br>
-                                <?php echo $pos['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_shelter" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $shelter['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $shelter['kategori_product'] ?>
-                                <br>
-                                <?php echo $shelter['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_sipil" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $sipil['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $sipil['kategori_product'] ?>
-                                <br>
-                                <?php echo $sipil['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_baja" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $baja['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $baja['kategori_product'] ?>
-                                <br>
-                                <?php echo $baja['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_gudang" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $gudang['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $gudang['kategori_product'] ?>
-                                <br>
-                                <?php echo $gudang['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_k_rumah" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $rumah['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $rumah['kategori_product'] ?>
-                                <br>
-                                <?php echo $rumah['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_r_rumah" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $renov['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $renov['kategori_product'] ?>
-                                <br>
-                                <?php echo $renov['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="<?php echo base_url() ?>C_dashboard/gallery_c_rumah" class="portfolio-link portfolio-box" >
-                    <img src="<?php echo base_url() ?>assets/uploads/product/<?php echo $cat['imgpath_product'] ?>" class="img-responsive img-product" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                <?php echo $cat['kategori_product'] ?>
-                                <br>
-                                <?php echo $cat['nama_product'] ?>
-                            </div>
-                        </div>                                
-                    </div>
-                </a>
+            <div class="row space__top--50">
+                <div class="col">
+                    <?=$pagination?>
+                    <!-- <ul class="page-pagination">
+                        <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
+                        <li class="active"><a href="#">01</a></li>
+                        <li><a href="#">02</a></li>
+                        <li><a href="#">03</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
+                    </ul> -->
+                </div>
             </div>
         </div>
-    </section>
+    </div>

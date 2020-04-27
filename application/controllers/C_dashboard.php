@@ -6,6 +6,7 @@ class C_dashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper(array('text'));
 		$this->load->model('frontend/M_dash','M_dash');
 	}
 
@@ -14,13 +15,36 @@ class C_dashboard extends CI_Controller {
 		$data['banner']=$this->M_dash->select_banner();
 		$data['client']=$this->M_dash->select_clients();
 		$data['countbanner']=$this->M_dash->count_banner();
-		$data['newsdata']=$this->M_dash->select_last_news();
-		$data['products']=$this->M_dash->select_last_products();		
+		$data['newsdata'] = $this->db->query("SELECT * FROM news ORDER BY id_news DESC LIMIT 3")->result();
+		$data['products']=$this->M_dash->select_last_products();	
+
+		
+		$data['projects'] = $this->db->query("SELECT * FROM products ORDER BY id_product DESC LIMIT 10")->result();	
 
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/home';	
-		$this->load->view('layout/frontend/wrapper_index',$data);
+		$this->load->view('layout/frontend/wrapper',$data);
 		$this->load->view('layout/frontend/modal',$data);
+	}
+
+	function contact() {
+		$data['title']='WIPERINDONESIA';
+		$data['isi']='menu/frontend/contact';
+		$this->load->view('layout/frontend/wrapper',$data);
+	}
+
+	function client() {
+		$data['title']='WIPERINDONESIA';
+		$data['client']=$this->M_dash->select_clients();
+		$data['isi']='menu/frontend/client';
+		$this->load->view('layout/frontend/wrapper',$data);
+	}
+
+	function service() {
+		$data['title']='WIPERINDONESIA';
+		$data['client']=$this->M_dash->select_clients();
+		$data['isi']='menu/frontend/service';
+		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
 	public function about()
@@ -42,16 +66,16 @@ class C_dashboard extends CI_Controller {
 	    $config["num_links"] = floor($choice);
 
 	    // integrate bootstrap pagination
-	    $config['full_tag_open'] = '<ul class="pagination">';
+	    $config['full_tag_open'] = '<ul class="page-pagination space__top--30">';
 	    $config['full_tag_close'] = '</ul>';
 	    $config['first_link'] = false;
 	    $config['last_link'] = false;
 	    $config['first_tag_open'] = '<li>';
 	    $config['first_tag_close'] = '</li>';
-	    $config['prev_link'] = '«';
+	    $config['prev_link'] = 'Prev';
 	    $config['prev_tag_open'] = '<li class="prev">';
 	    $config['prev_tag_close'] = '</li>';
-	    $config['next_link'] = '»';
+	    $config['next_link'] = 'Next';
 	    $config['next_tag_open'] = '<li>';
 	    $config['next_tag_close'] = '</li>';
 	    $config['last_tag_open'] = '<li>';
@@ -73,6 +97,7 @@ class C_dashboard extends CI_Controller {
 	public function news_read()
 	{
 		$id=$this->uri->segment(3);
+		$data['newsdata'] = $this->M_dash->get_newslist_data(8, 0, NULL);
 		$data['news']=$this->M_dash->select_news_read($id);
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/news_read';
@@ -91,16 +116,16 @@ class C_dashboard extends CI_Controller {
 	    $config["num_links"] = floor($choice);
 
 	    // integrate bootstrap pagination
-	    $config['full_tag_open'] = '<ul class="pagination">';
+	    $config['full_tag_open'] = '<ul class="page-pagination space__top--30">';
 	    $config['full_tag_close'] = '</ul>';
 	    $config['first_link'] = false;
 	    $config['last_link'] = false;
 	    $config['first_tag_open'] = '<li>';
 	    $config['first_tag_close'] = '</li>';
-	    $config['prev_link'] = '«';
+	    $config['prev_link'] = 'Prev';
 	    $config['prev_tag_open'] = '<li class="prev">';
 	    $config['prev_tag_close'] = '</li>';
-	    $config['next_link'] = '»';
+	    $config['next_link'] = 'Next';
 	    $config['next_tag_open'] = '<li>';
 	    $config['next_tag_close'] = '</li>';
 	    $config['last_tag_open'] = '<li>';
@@ -121,16 +146,16 @@ class C_dashboard extends CI_Controller {
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
-	public function career_details($id)
+	public function career_details($id = "")
 	{
 		// $id=$this->uri->segment(3);
-		$data['career']=$this->M_dash->select_career_details($id);
+		// $data['career']=$this->M_dash->select_career_details($id);
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/career_details';
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
-	public function career_apply($id)
+	public function career_apply($id = "")
 	{
 		// $id=$this->uri->segment(3);
 		$data['error']=$this->upload->display_errors();
@@ -331,18 +356,80 @@ class C_dashboard extends CI_Controller {
 	public function products_gallery()
 	{
 		//product by category
-		$data['jpo']=$this->M_dash->select_last_jpo();
-		$data['pos']=$this->M_dash->select_last_pos();				
-		$data['shelter']=$this->M_dash->select_last_shelter();
-		$data['sipil']=$this->M_dash->select_last_sipil();
-		$data['baja']=$this->M_dash->select_last_baja();
-		$data['gudang']=$this->M_dash->select_last_gudang();
-		$data['rumah']=$this->M_dash->select_last_rumah();
-		$data['renov']=$this->M_dash->select_last_renov();
-		$data['cat']=$this->M_dash->select_last_cat();
+		// $data['jpo']=$this->M_dash->select_last_jpo();
+		// $data['pos']=$this->M_dash->select_last_pos();				
+		// $data['shelter']=$this->M_dash->select_last_shelter();
+		// $data['sipil']=$this->M_dash->select_last_sipil();
+		// $data['baja']=$this->M_dash->select_last_baja();
+		// $data['gudang']=$this->M_dash->select_last_gudang();
+		// $data['rumah']=$this->M_dash->select_last_rumah();
+		// $data['renov']=$this->M_dash->select_last_renov();
+		// $data['cat']=$this->M_dash->select_last_cat();
 
+		$srch='';
+		//pagination settings
+		$config['base_url'] = site_url('C_dashboard/products_gallery/');
+	    $config['total_rows'] = $this->db->count_all('products');
+	    $config['per_page'] = "10";
+	    $config["uri_segment"] = 3;
+	    $choice = $config["total_rows"]/$config["per_page"];
+	    $config["num_links"] = floor($choice);
+
+	    // integrate bootstrap pagination
+	    $config['full_tag_open'] = '<ul class="page-pagination space__top--30">';
+	    $config['full_tag_close'] = '</ul>';
+	    $config['first_link'] = false;
+	    $config['last_link'] = false;
+	    $config['first_tag_open'] = '<li>';
+	    $config['first_tag_close'] = '</li>';
+	    $config['prev_link'] = 'Prev';
+	    $config['prev_tag_open'] = '<li class="prev">';
+	    $config['prev_tag_close'] = '</li>';
+	    $config['next_link'] = 'Next';
+	    $config['next_tag_open'] = '<li>';
+	    $config['next_tag_close'] = '</li>';
+	    $config['last_tag_open'] = '<li>';
+	    $config['last_tag_close'] = '</li>';
+	    $config['cur_tag_open'] = '<li class="active"><a href="#">';
+	    $config['cur_tag_close'] = '</a></li>';
+	    $config['num_tag_open'] = '<li>';
+	    $config['num_tag_close'] = '</li>';
+	    $this->pagination->initialize($config);
+
+	    $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+	    $data['projects'] = $this->M_dash->get_prodlist_data($config["per_page"], $data['page'], NULL);
+	    $data['pagination'] = $this->pagination->create_links();	
+
+		$data['total']=$this->M_dash->count_prodlist($srch);
 		$data['title']='WIPERINDONESIA';
 		$data['isi']='menu/frontend/products_gallery';
+
+
+
+		// $sql = "SELECT * FROM products ORDER BY id_product DESC";
+		// $query = $this->db->query($sql);
+		// $data['projects'] = $query->result();
+
+		// $data['title']='WIPERINDONESIA';
+		// $data['isi']='menu/frontend/products_gallery';
+		$this->load->view('layout/frontend/wrapper',$data);
+	}
+
+	function detail_product($id = "") {
+		$sql = "SELECT * FROM products WHERE id_product = $id";
+		$query = $this->db->query($sql);
+		$project = $query->result();
+		foreach ($project as $row) {
+			$data['id_product'] = $row->id_product;
+			$data['kategori_product'] = $row->kategori_product;
+			$data['nama_product'] = $row->nama_product;
+			$data['ket_product'] = $row->ket_product;
+			$data['imgpath_product'] = $row->imgpath_product;
+		}
+		
+
+		$data['title']='WIPERINDONESIA';
+		$data['isi']='menu/frontend/detail_gallery';
 		$this->load->view('layout/frontend/wrapper',$data);
 	}
 
